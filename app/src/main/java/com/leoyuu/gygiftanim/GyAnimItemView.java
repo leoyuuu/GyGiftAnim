@@ -1,6 +1,7 @@
 package com.leoyuu.gygiftanim;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.widget.FrameLayout;
 import android.widget.TextView;
@@ -17,6 +18,10 @@ public class GyAnimItemView extends FrameLayout {
         super(context);
         LayoutInflater.from(context).inflate(R.layout.gift_item, this);
         tipTv = findViewById(R.id.tip_tv);
+    }
+
+    void setYellow() {
+        tipTv.setBackgroundColor(Color.YELLOW);
     }
 
     void update(GyAnimInfo animInfo) {

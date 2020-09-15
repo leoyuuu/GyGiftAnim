@@ -40,7 +40,7 @@ class GyAnimInfo implements AnimInfo<GyAnimInfo> {
 
     @Override
     public int animTimeInMill() {
-        return 10000;
+        return 2000;
     }
 
     @NonNull

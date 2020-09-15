@@ -18,11 +18,13 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements OnSendListener {
     private AnimHelper<GyAnimItemView, GyAnimInfo> animHelper = new AnimHelper<>();
+    private SimpleAnimView simpleAnimView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        simpleAnimView = findViewById(R.id.simple_anim);
         animHelper.setFactory(new GyViewFactory());
         animHelper.attachRv((RecyclerView) findViewById(R.id.anim_rv));
         RecyclerView rv = findViewById(R.id.send_rv);
@@ -32,7 +34,9 @@ public class MainActivity extends AppCompatActivity implements OnSendListener {
 
     @Override
     public void onSend(int sender, int giftId, int giftNum) {
-        animHelper.send(new GyAnimInfo(sender, giftId, giftNum, 12345));
+        GyAnimInfo animInfo = new GyAnimInfo(sender, giftId, giftNum, 12345);
+        animHelper.send(animInfo);
+        simpleAnimView.send(animInfo);
     }
 
 
