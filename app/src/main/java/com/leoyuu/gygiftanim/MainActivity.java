@@ -34,9 +34,8 @@ public class MainActivity extends AppCompatActivity implements OnSendListener {
 
     @Override
     public void onSend(int sender, int giftId, int giftNum) {
-        GyAnimInfo animInfo = new GyAnimInfo(sender, giftId, giftNum, 12345);
-        animHelper.send(animInfo);
-        simpleAnimView.send(animInfo);
+        animHelper.send(new GyAnimInfo(sender, giftId, giftNum, 12345));
+        simpleAnimView.send(new GyAnimInfo(sender, giftId, giftNum, 12345));
     }
 
 
